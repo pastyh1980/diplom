@@ -2,12 +2,26 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
        http://www.springframework.org/schema/context
-       http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+       http://www.springframework.org/schema/context/spring-context-4.2.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd
+       http://www.springframework.org/schema/cache
+       http://www.springframework.org/schema/cache/spring-cache.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+       http://www.springframework.org/schema/data/jpa
+       http://www.springframework.org/schema/data/jpa/spring-jpa-1.9.xsd">
 
     <context:property-placeholder location="classpath:db.properties" />
+    <context:component-scan base-package="com.github.vkpeb" />
+    <mvc:annotation-driven />
+    <jpa:repositories base-package="com.github.vkpeb.dao" />
 
     <bean id = "dataSourse" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="${db.driver}" />
@@ -15,4 +29,24 @@
         <property name="username" value="${db.username}" />
         <property name="password" value="${db.password}" />
     </bean>
+
+    <bean id = "entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSourse" />
+        <property name="packagesToScan" value="${hb.packages.to.scan}" />
+        <property name="jpaVendorAdapter" ref="jpaVendorAdapter" />
+        <property name="jpaProperties">
+            <props>
+                <prop key="hibernate.dialect">${hb.dialect}</prop>
+                <prop key="hibernate.show.sql">${hb.show.sql}</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+
+    <bean id = "transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory" />
+    </bean>
+
+    <tx:annotation-driven transaction-manager="transactionManager" />
 </beans>
