@@ -27,6 +27,17 @@ public class Auth {
     @Enumerated(EnumType.STRING)
     private UserType type;
 
+    @Column(name = "enabled")
+    private int enabled;
+
+    public int getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(int enabled) {
+        this.enabled = enabled;
+    }
+
     public long getId() {
         return id;
     }
