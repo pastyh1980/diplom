@@ -13,7 +13,7 @@
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix">
-            <value>/WEB-INF/site/</value>
+            <value>/WEB-INF/site/pages/</value>
         </property>
         <property name="suffix">
             <value>.jsp</value>

@@ -15,4 +15,5 @@ public interface AuthService {
     Auth getAuthByLogin(String login);
     Auth updateAuth(Auth auth);
     List<Auth> getAll();
+    List<Auth> getAllActive();
 }

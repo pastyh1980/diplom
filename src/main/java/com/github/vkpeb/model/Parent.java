@@ -47,7 +47,7 @@ public class Parent {
     private Auth auth;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @Column(name = "child_id")
+    @JoinColumn(name = "child_id")
     private Student student;
 
     public long getId() {

@@ -22,7 +22,7 @@ public class Boss {
     private String name;
 
     @Column(name = "otchestvo")
-    private String otchestve;
+    private String otchestvo;
 
     @OneToOne(optional = false, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.ALL})
     @JoinColumn(name = "auth_id")
@@ -52,12 +52,12 @@ public class Boss {
         this.name = name;
     }
 
-    public String getOtchestve() {
-        return otchestve;
+    public String getOtchestvo() {
+        return otchestvo;
     }
 
-    public void setOtchestve(String otchestve) {
-        this.otchestve = otchestve;
+    public void setOtchestvo(String otchestve) {
+        this.otchestvo = otchestve;
     }
 
     public Auth getAuth() {
