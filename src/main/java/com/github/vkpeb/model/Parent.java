@@ -46,7 +46,7 @@ public class Parent {
     @JoinColumn(name = "auth_id", unique = true)
     private Auth auth;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {/*CascadeType.PERSIST, */CascadeType.MERGE})
     @JoinColumn(name = "child_id")
     private Student student;
 

@@ -10,6 +10,8 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
+import java.util.regex.Pattern;
+
 /**
  * Created by pasty on 13.04.2016.
  */
@@ -18,6 +20,8 @@ public class AuthFormValidator implements Validator {
 
     @Autowired
     private AuthService authService;
+
+    private Pattern onlyLatAndDig = Pattern.compile("^[a-z0-9]+$}");
 
     @Override
     public boolean supports(Class<?> clazz) {
@@ -43,6 +47,9 @@ public class AuthFormValidator implements Validator {
 
         if (authForm.getLogin().contains("student") || authForm.getLogin().contains("parent"))
             errors.rejectValue("login", "loginIsUsed");
+
+        if (onlyLatAndDig.matcher(authForm.getLogin()).matches())
+            errors.rejectValue("login", "loginIncorrect");
 
         if (auth == null) {
             ValidationUtils.rejectIfEmptyOrWhitespace(errors, "passwd", "notEmpty");

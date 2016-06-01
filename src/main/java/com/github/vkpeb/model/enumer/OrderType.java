@@ -4,15 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by pasty on 03.04.2016.
+ * Created by pasty on 26.05.2016.
  */
-public enum MissType {
+public enum OrderType {
 
-    VALID ("уважительная"), INVALID ("прогул");
+    ENROLLMENT ("зачислении"), TRANSFER ("переводе"), EXPULSION ("отчислении");
 
     String rus;
 
-    MissType(String rus) {
+    OrderType(String rus) {
         this.rus = rus;
     }
 
@@ -22,15 +22,15 @@ public enum MissType {
 
     public static List<String> getRusList() {
         List<String> rusList = new ArrayList<>();
-        for (MissType eng: MissType.values()) {
+        for (OrderType eng: OrderType.values()) {
             rusList.add(eng.rus);
         }
 
         return rusList;
     }
 
-    public static MissType getByRus(String rus) {
-        for (MissType eng: MissType.values()) {
+    public static OrderType getByRus(String rus) {
+        for (OrderType eng: OrderType.values()) {
             if (eng.rus.equals(rus)) return eng;
         }
 

@@ -1,26 +1,12 @@
-package com.github.vkpeb.model;
-
-import org.hibernate.annotations.GenericGenerator;
-
-import javax.persistence.*;
+package com.github.vkpeb.model.form;
 
 /**
- * Created by pasty on 03.04.2016.
+ * Created by pasty on 28.05.2016.
  */
-@Entity
-@Table(name = "disciplines")
-public class Discipline {
+public class DisciplineForm {
 
-    @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name = "increment", strategy = "increment")
-    @Column(name = "discipline_id", length = 6, nullable = false)
     private long id;
-
-    @Column(name = "discipline_name")
     private String disciplineName;
-
-    @Column(name = "prepod")
     private String prepod;
 
     public long getId() {

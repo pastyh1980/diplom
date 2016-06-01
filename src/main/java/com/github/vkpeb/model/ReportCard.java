@@ -1,5 +1,6 @@
 package com.github.vkpeb.model;
 
+import com.github.vkpeb.model.enumer.Month;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -27,10 +28,14 @@ public class ReportCard {
     private Discipline discipline;
 
     @Column(name = "mounth")
-    private Date date;
+    @Enumerated(EnumType.ORDINAL)
+    private Month month;
 
     @Column(name = "rate")
     private String rate;
+
+    @Column(name = "year")
+    private Integer year;
 
     public long getId() {
         return id;
@@ -56,12 +61,12 @@ public class ReportCard {
         this.discipline = discipline;
     }
 
-    public Date getDate() {
-        return date;
+    public Month getMonth() {
+        return month;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setMonth(Month month) {
+        this.month = month;
     }
 
     public String getRate() {
@@ -70,5 +75,13 @@ public class ReportCard {
 
     public void setRate(String rate) {
         this.rate = rate;
+    }
+
+    public Integer getYear() {
+        return year;
+    }
+
+    public void setYear(Integer year) {
+        this.year = year;
     }
 }

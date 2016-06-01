@@ -5,6 +5,7 @@ package com.github.vkpeb.model.enumer;
  */
 public enum UserType {
     STUDENT,
+    CAPTAIN,
     PARENT,
     BOSS,
     ADMIN

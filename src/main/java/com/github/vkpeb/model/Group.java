@@ -7,6 +7,8 @@ import javax.persistence.*;
 /**
  * Created by pasty on 03.04.2016.
  */
+@Entity
+@Table(name = "groups")
 public class Group {
 
     @Id
