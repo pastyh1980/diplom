@@ -1,0 +1,458 @@
+/*Style of header*/
+body {
+	background-color: #98a9ff;
+	font-family: Helvetica, 'Times New Roman';
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+.wrap {
+	background-color: #e5e5e5;
+	width: 986px;
+	margin: 0 auto;
+	padding-bottom: 10px;
+}
+
+.header {
+	width: 100%;
+}
+
+.header p {
+	color: #fff;
+	text-align: center;
+}
+
+.header a {
+	color: #fff;
+	text-align: center;
+}
+
+.head {
+	width: 100%;
+	height: 151px;
+	background-color: #0069df;
+}
+
+.head img {
+	width: 986px;
+	height: 151px;
+	background-color: #0069df;
+}
+
+.head p {
+	font-size: 25pt;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.menu {
+	width: 100%;
+	height: 19px;
+	background-color: #6666ff;
+	background-image: url(../img/menu.jpg);
+	padding-top: 2px;
+}
+
+.menu a {
+	text-decoration: none;
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+
+.menu a:hover {
+	text-decoration: none;
+	color: #000573;
+	background-color: #e5e5e5;
+}
+
+.menu p {
+	height: 17px;
+	font-size: 12pt;
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+.main {
+	height: 100%;
+	width: 87px;
+	float: left;
+	margin-right: 2px;
+}
+
+.stud {
+	height: 100%;
+	width: 97px;
+	float: left;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+.cards {
+	height: 100%;
+	width: 269px;
+	float: left;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+.events {
+	height: 100%;
+	width: 134px;
+	float: left;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+.events:hover .events-down {
+	display: block;
+}
+
+.events-down {
+	margin: 0;
+	padding: 0;
+	background-color: #000573;
+	display: none;
+	position: absolute;
+}
+
+.events-down p {
+	width: 134px;
+	height: 35px;
+	margin: 0;
+	padding: 0;
+	border-bottom: 1px solid white;
+	/*border-top: 1px solid white;*/
+	font-size: 10pt;
+	vertical-align: middle;
+}
+
+.usr {
+	height: 100%;
+	width: 347px;
+	float: left;
+	margin-left: 11px;
+}
+
+.usr p {
+	text-align: left;
+}
+
+.usr a {
+	text-align: left;
+	display: inline;
+}
+
+.usr a:hover {
+	text-align: left;
+	background-color: #000573;
+	color: #fff;
+	text-decoration: underline;
+}
+
+.footer {
+	width: 986px;
+	height: 40px;
+	background-color: #000573;
+	margin: 0 auto;
+	padding-top: 9px;
+}
+
+.footer p {
+	text-align: center;
+	font-size: 13px;
+	color: fff;
+}
+
+form {
+	margin: 0;
+	padding: 0;
+}
+
+input {
+   border: 1px solid #cccccc; 
+   border-radius: 3px; 
+   -webkit-border-radius: 3px; 
+   -moz-border-radius: 3px; 
+   -khtml-border-radius: 3px; 
+   background: #ffffff !important; 
+   outline: none; 
+   height: 24px; 
+   width: 150px; 
+   color: #000; 
+   font-size: 12px; 
+   padding: 2px;
+}
+
+select {
+	border: 1px solid #cccccc; 
+	border-radius: 3px; 
+	-webkit-border-radius: 3px; 
+	-moz-border-radius: 3px; 
+	-khtml-border-radius: 3px; 
+	background: #ffffff !important; 
+	outline: none;
+	color: #000; 
+	font-size: 12px; 
+	padding: 2px;
+}
+
+textarea {
+	border: 1px solid #cccccc; 
+	border-radius: 3px; 
+	-webkit-border-radius: 3px; 
+	-moz-border-radius: 3px; 
+	-khtml-border-radius: 3px; 
+	background: #ffffff !important; 
+	outline: none;
+	color: #000; 
+	font-size: 12px; 
+	padding: 2px;
+}
+
+input[type="submit"] {
+	font-size: 16px; 
+}
+
+#login-box {
+	margin: 10px auto;
+}
+
+#login-box p {
+	text-align: center;
+	font-size: 25px;
+}
+
+#login-box table {
+	margin: 25px auto;
+}
+
+.title-text {
+	font-size: 25pt;
+	font-weight: bold;
+	text-align: center;
+}
+
+table th {
+	text-align: center;
+	font-size: 14pt;
+	font-weight: bold;
+}
+
+table td {
+	text-align: center;
+	font-size: 12pt;
+	font-weight: none;
+}
+
+.studlist {
+	margin: 5px auto;
+	line-height: 26px;
+}
+
+.studlist td, .studlist th {
+	padding: 2px;
+}
+
+.meetlist {
+	margin: 5px auto;
+	line-height: 26px;
+}
+
+.meetlist td, .meetlist th {
+	padding: 5px;
+}
+
+.btn {
+	text-decoration:none; 
+	text-align:center; 
+	padding:5px 10px; 
+	font-size: 11pt;
+	border:solid 1px #000673; 
+	-webkit-border-radius:7px;
+	-moz-border-radius:7px; 
+	border-radius: 7px;
+	font-weight:bold; 
+	color:#ffffff; 
+	background-color:#000bd9; 
+	background-image: -moz-linear-gradient(top, #000bd9 0%, #1982A5 100%); 
+	background-image: -webkit-linear-gradient(top, #000bd9 0%, #1982A5 100%); 
+	background-image: -o-linear-gradient(top, #000bd9 0%, #1982A5 100%); 
+	background-image: -ms-linear-gradient(top, #000bd9 0% ,#1982A5 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1982A5', endColorstr='#1982A5',GradientType=0 ); 
+	background-image: linear-gradient(top, #000bd9 0% ,#1982A5 100%);   
+	-webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
+	-moz-box-shadow: 0px 0px 2px #bababa,  inset 0px 0px 1px #ffffff;  
+	box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;  
+	-webkit-transition: all 0s linear;
+	-moz-transition:  all 0s linear;
+	-o-transition:  all 0s linear;
+	transition:  all 0s linear;
+	cursor: pointer;
+}
+ 
+.btn:hover{
+	padding:5px 10px; 
+	font-size: 11pt;
+	border:solid 1px #000673; 
+	-webkit-border-radius:7px;
+	-moz-border-radius:7px; 
+	border-radius: 7px; 
+	font-weight:bold; 
+	color:#ffffff; 
+	background-color:#353ffc; 
+	background-image: -moz-linear-gradient(top, #353ffc 0%, #adebff 100%); 
+	background-image: -webkit-linear-gradient(top, #353ffc 0%, #adebff 100%); 
+	background-image: -o-linear-gradient(top, #353ffc 0%, #adebff 100%); 
+	background-image: -ms-linear-gradient(top, #353ffc 0% ,#adebff 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#adebff', endColorstr='#adebff',GradientType=0 ); 
+	background-image: linear-gradient(top, #353ffc 0% ,#adebff 100%);   
+	-webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
+	-moz-box-shadow: 0px 0px 2px #bababa,  inset 0px 0px 1px #ffffff;  
+	box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;  
+}
+ 
+.btn:active{
+	padding:5px 10px; 
+	font-size: 11pt; 
+	border:solid 1px #000; 
+	-webkit-border-radius:7px;
+	-moz-border-radius:7px; 
+	border-radius: 7px; 
+	font-weight:bold; 
+	color:#ffffff; 
+	background-color:#000bd9; 
+	background-image: -moz-linear-gradient(top, #000bd9 0%, #1982a5 100%); 
+	background-image: -webkit-linear-gradient(top, #000bd9 0%, #1982a5 100%); 
+	background-image: -o-linear-gradient(top, #000bd9 0%, #1982a5 100%); 
+	background-image: -ms-linear-gradient(top, #000bd9 0% ,#1982a5 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1982a5', endColorstr='#1982a5',GradientType=0 ); 
+	background-image: linear-gradient(top, #000bd9 0% ,#1982a5 100%);   
+	-webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
+	-moz-box-shadow: 0px 0px 2px #bababa,  inset 0px 0px 1px #ffffff;  
+	box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;  
+}
+
+#addstud {
+	margin-top: 33px;
+	margin-left: 769px;
+}
+
+#add_meeting {
+	margin-top: 33px;
+	margin-left: 769px;
+}
+
+.small {
+	font-size: 16pt;
+}
+
+.stud-info table {
+	margin: 20px 27px;
+	line-height: 20px;
+	text-align: left;
+}
+
+.stud-info table td {
+	text-align: left;
+	padding-right: 18px;
+}
+
+.parent-info table {
+	margin: 20px 27px;
+	line-height: 20px;
+	text-align: left;
+}
+
+.parent-info table td {
+	text-align: left;
+	padding-right: 18px;
+}
+
+.orders-info table {
+	margin: 20px 27px;
+	line-height: 20px;
+	text-align: left;
+}
+
+.orders-info table td {
+	text-align: left;
+	padding-right: 18px;
+}
+
+#editstud {
+	margin-top: 33px;
+	margin-left: 769px;
+}
+
+.stud-edit table {
+	margin: 20px 27px;
+	line-height: 20px;
+	text-align: left;
+}
+
+.stud-edit table td {
+	text-align: left;
+	padding-right: 18px;
+}
+
+.parent-edit table {
+	margin: 20px 27px;
+	line-height: 20px;
+	text-align: left;
+}
+
+.parent-edit table td {
+	text-align: left;
+	padding-right: 18px;
+}
+
+.orders-edit table {
+	margin: 20px 27px;
+	line-height: 20px;
+	text-align: left;
+}
+
+.orders-edit table td {
+	text-align: left;
+	padding-right: 18px;
+}
+
+.meet-edit table {
+	margin: 20px 27px;
+	line-height: 20px;
+	text-align: left;
+}
+
+.meet-edit table td {
+	text-align: left;
+	padding-right: 18px;
+}
+
+#meetsave {
+	margin-top: 8px;
+	margin-left: 769px;
+}
+
+.mrg {
+	margin-left: 30px;
+}
+
+#sub {
+	margin-left: 600px
+}
+
+.block {
+	width: 1px;
+	clear: both;
+}

@@ -19,4 +19,13 @@ public interface VisitingCardDao extends JpaRepository<VisitingCard, Long> {
 
     @Query("select distinct (str(month(v.date)) || '.' || str(year(v.date))) from VisitingCard v")
     List<String> getStudsCards();
+
+    @Query("select sum(v.hourMiss) from VisitingCard v where v.student=:student and month(v.date)=:month and year(v.date)=:year")
+    Integer getTotalMiss(@Param("student") Student student, @Param("month") Integer month, @Param("year") Integer year);
+
+    @Query("select sum(v.hourMiss) from VisitingCard v where v.student=:student and month(v.date)=:month and year(v.date)=:year and v.missType='VALID'")
+    Integer getValidMiss(@Param("student") Student student, @Param("month") Integer month, @Param("year") Integer year);
+
+    @Query("select sum(v.hourMiss) from VisitingCard v where v.student=:student and month(v.date)=:month and year(v.date)=:year and v.missType='INVALID'")
+    Integer getInvalidMiss(@Param("student") Student student, @Param("month") Integer month, @Param("year") Integer year);
 }

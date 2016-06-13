@@ -240,6 +240,21 @@ public class CardsController {
             dateStrList.add(new SimpleDateFormat("dd.MM.yyyy").format(cal.getTime()));
         }
 
+        List<String> dateStrList1 = new ArrayList<>();
+        for (int i = 0 ; dateStrList.size() > i && i < 11 ; ++i) {
+            dateStrList1.add(dateStrList.get(i));
+        }
+
+        List<String> dateStrList2 = new ArrayList<>();
+        for (int i = 11 ; dateStrList.size() > i && i < 22 ; ++i) {
+            dateStrList2.add(dateStrList.get(i));
+        }
+
+        List<String> dateStrList3 = new ArrayList<>();
+        for (int i = 22 ; dateStrList.size() > i && i < 31 ; ++i) {
+            dateStrList3.add(dateStrList.get(i));
+        }
+
         List<Student> studentList = studService.getAll();
 
         for (Student student : studentList) {
@@ -254,6 +269,9 @@ public class CardsController {
 
         response.addObject("visitingCardForm", visitingCardForm);
         response.addObject("calendarList", dateStrList);
+        response.addObject("calendarList1", dateStrList1);
+        response.addObject("calendarList2", dateStrList2);
+        response.addObject("calendarList3", dateStrList3);
         response.addObject("studentList", studentList);
         updateModel(response);
         response.setViewName("visitingcardform");
@@ -303,8 +321,26 @@ public class CardsController {
             dateStrList.add(new SimpleDateFormat("dd.MM.yyyy").format(cal.getTime()));
         }
 
+        List<String> dateStrList1 = new ArrayList<>();
+        for (int i = 0 ; dateStrList.size() > i && i < 11 ; ++i) {
+            dateStrList1.add(dateStrList.get(i));
+        }
+
+        List<String> dateStrList2 = new ArrayList<>();
+        for (int i = 11 ; dateStrList.size() > i && i < 22 ; ++i) {
+            dateStrList2.add(dateStrList.get(i));
+        }
+
+        List<String> dateStrList3 = new ArrayList<>();
+        for (int i = 22 ; dateStrList.size() > i && i < 31 ; ++i) {
+            dateStrList3.add(dateStrList.get(i));
+        }
+
         response.addObject("visitingCardForm", visitingCardForm);
         response.addObject("calendarList", dateStrList);
+        response.addObject("calendarList1", dateStrList1);
+        response.addObject("calendarList2", dateStrList2);
+        response.addObject("calendarList3", dateStrList3);
         response.addObject("studentList", studentList);
         updateModel(response);
         response.setViewName("visitingcardform");

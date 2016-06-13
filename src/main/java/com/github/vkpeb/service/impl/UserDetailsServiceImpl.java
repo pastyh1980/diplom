@@ -32,12 +32,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         Auth auth = authService.getAuthByLogin(username);
         Set<GrantedAuthority> role = new HashSet<>();
         SimpleGrantedAuthority authority = new SimpleGrantedAuthority("ROLE_" + auth.getType().name());
-        /*role.add(new GrantedAuthority() {
-            @Override
-            public String getAuthority() {
-                return "ROLE_" + auth.getType().name();
-            }
-        });*/
         role.add(authority);
         boolean isEnable = auth.getEnabled() == 1;
 

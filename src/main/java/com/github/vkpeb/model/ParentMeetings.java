@@ -3,6 +3,7 @@ package com.github.vkpeb.model;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Created by pasty on 03.04.2016.
@@ -20,6 +21,9 @@ public class ParentMeetings {
     @Column(name = "theme")
     private String theme;
 
+    @Column(name = "date")
+    private Date date;
+
     public long getId() {
         return id;
     }
@@ -34,5 +38,13 @@ public class ParentMeetings {
 
     public void setTheme(String theme) {
         this.theme = theme;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 }

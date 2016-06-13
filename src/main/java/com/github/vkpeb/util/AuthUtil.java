@@ -22,9 +22,6 @@ import java.util.Random;
 @Component
 public class AuthUtil implements ApplicationContextAware {
 
-    @Autowired
-    private AuthService authService;
-
     private static ApplicationContext applicationContext;
 
     private static List<String> cacheLogins = new ArrayList<>();
@@ -55,10 +52,6 @@ public class AuthUtil implements ApplicationContextAware {
         String newFamily = convertToLat(family);
         String newName = convertToLat(name);
         String login = newFamily + '.' + newName;
-
-
-
-//        ApplicationContext applicationContext = new ();
 
         AuthService authService = applicationContext.getBean(AuthService.class);
 

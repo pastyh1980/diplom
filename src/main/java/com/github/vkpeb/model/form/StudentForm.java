@@ -21,6 +21,7 @@ public class StudentForm {
     private String livingCondition;
     private String familyStatus;
     private String post;
+    private String address;
     private List<ParentForm> parents;
     private List<OrderForm> orders;
 
@@ -94,6 +95,14 @@ public class StudentForm {
 
     public void setPost(String post) {
         this.post = post;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public List<ParentForm> getParents() {

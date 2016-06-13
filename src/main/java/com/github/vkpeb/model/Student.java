@@ -1,6 +1,7 @@
 package com.github.vkpeb.model;
 
 import com.github.vkpeb.model.enumer.FamilyStatuses;
+import com.github.vkpeb.model.enumer.Gender;
 import com.github.vkpeb.model.enumer.LivingConditions;
 import com.github.vkpeb.model.enumer.Posts;
 import org.hibernate.annotations.GenericGenerator;
@@ -53,6 +54,13 @@ public class Student {
     @Column(name = "post")
     @Enumerated(EnumType.STRING)
     private Posts post;
+
+    @Column(name = "gender")
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
+
+    @Column(name = "address")
+    private String address;
 
     public long getId() {
         return id;
@@ -140,6 +148,22 @@ public class Student {
 
     public void setPost(Posts post) {
         this.post = post;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     @Override

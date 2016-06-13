@@ -8,5 +8,6 @@ public enum UserType {
     CAPTAIN,
     PARENT,
     BOSS,
-    ADMIN
+    ADMIN,
+    CAPTAINASSIST
 }

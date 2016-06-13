@@ -53,4 +53,19 @@ public class CardsServiceImpl implements CardsService {
     public List<String> getVisitingCards() {
         return visitingCardDao.getStudsCards();
     }
+
+    @Override
+    public Integer getTotalMiss(Student student, Integer month, Integer year) {
+        return visitingCardDao.getTotalMiss(student, month + 1, year);
+    }
+
+    @Override
+    public Integer getValidMiss(Student student, Integer month, Integer year) {
+        return visitingCardDao.getValidMiss(student, month + 1, year);
+    }
+
+    @Override
+    public Integer getInvalidMiss(Student student, Integer month, Integer year) {
+        return visitingCardDao.getInvalidMiss(student, month + 1, year);
+    }
 }

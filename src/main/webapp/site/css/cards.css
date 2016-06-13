@@ -1,7 +1,6 @@
 #popup-parent {
-    background: #000;
+    background: rgba(0, 0, 0, 0.7);
     height: 100%;
-    opacity: 0.7;
     position: fixed;
     width: 100%;
     z-index: 100;
@@ -10,11 +9,141 @@
     display: none;
 }
 #popup {
-    background-color: #00f;
-    height: 200px;
+    background-color: #e5e5e5;
+    height: 158px;
     position: fixed;
     top: 100px;
     left: 40%;
-    color: #f00;
     width: 300px;
+	opacity: 1;
+	border: 2px solid #e5e5e5;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px; 
+	border-radius: 5px;
+}
+
+#popup p {
+	color: #000bd9;
+	font-weight: bold;
+	text-align: right;
+	cursor: pointer;
+	margin: 5px;
+}
+
+#popup table {
+	text-align: left;
+	margin: 10px;
+}
+
+#popup td {
+	text-align: left;
+	padding: 4px;
+}
+
+#popup button {
+	margin: 5px 107px
+}
+
+#reportCards {
+	float: left;
+	width : 48%;
+	margin: 5px 10px;
+}
+
+#visitingCards {
+	float: left;
+	width : 48%;
+	margin: 5px 9px;
+}
+
+#reportCards table {
+	width: 100%;
+	line-height: 30px;
+}
+
+#reportCards p.btn {
+	display: block;
+	width: 125px;
+	height: 16px;
+	margin: 20px 162px 0 162px;
+}
+
+#visitingCards table {
+	width: 100%;
+	line-height: 30px;
+}
+
+#visitingCards p.btn {
+	display: block;
+	width: 125px;
+	height: 16px;
+	margin: 20px 162px 0 162px;
+}
+
+.rep_card {
+	margin: 10px auto;
+}
+
+.rep_card p.vertical_text {
+	font-size: 12pt;
+	font-weight: normal;
+	vertical-align: middle;
+	text-align: left;
+	padding: 0px;
+	writing-mode: vertical-lr;
+	-webkit-writing-mode: vertical-lr;
+	-ms-writing-mode: vertical-lr;
+	padding-left: 11px;
+}
+
+.rep_card th.vertical_text {
+	height: 100px;
+}
+
+#save_report_card {
+	margin: 15px 0 0 30px;
+}
+
+#generate_report_card {
+	margin: 15px 0 0 630px;
+}
+
+.vis_card th p {
+	font-size: 12pt;
+	font-weight: normal;
+	vertical-align: middle;
+	text-align: left;
+	padding: 0px;
+	writing-mode: vertical-lr;
+	-webkit-writing-mode: vertical-lr;
+	-ms-writing-mode: vertical-lr;
+	padding-left: 11px;
+}
+
+.vis_card th {
+	height: 100px;
+}
+
+.rate {
+	width: 40px;
+}
+
+.one {
+	float: left;
+	margin: 15px 5px 0 334px;
+}
+
+.two {
+	float: left;
+	margin: 15px 5px 0 5px;
+}
+
+.three {
+	float: left;
+	clear: right;
+	margin: 15px 5px 0 5px;
+}
+
+#save_visiting_card {
+	margin: 50px 0 0 135px;
 }

@@ -46,7 +46,7 @@ public class StudServiceImpl implements StudService{
 
     @Override
     public Student getStudentById(long id) {
-        return studDao.getOne(id);
+        return studDao.findOne(id);
     }
 
     @Override

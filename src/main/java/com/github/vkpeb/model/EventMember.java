@@ -17,11 +17,11 @@ public class EventMember {
     @Column(name = "event_members_id", length = 6, nullable = false)
     private long id;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.ALL})
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name = "event_id")
     private Event event;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.ALL})
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "student_id")
     private Student student;
 

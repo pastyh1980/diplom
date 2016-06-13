@@ -18,4 +18,7 @@ public interface CardsService {
     List<VisitingCard> getStudsVisiting(Student student, Integer month, Integer year);
     VisitingCard saveVisitingCard(VisitingCard visitingCard);
     List<String> getVisitingCards();
+    Integer getTotalMiss(Student student, Integer month, Integer year);
+    Integer getValidMiss(Student student, Integer month, Integer year);
+    Integer getInvalidMiss(Student student, Integer month, Integer year);
 }

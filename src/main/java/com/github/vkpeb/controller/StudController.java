@@ -54,6 +54,8 @@ public class StudController {
 
         response.addObject("students", students);
 
+        updateModel(response);
+
         response.setViewName("studlist");
 
         return response;
@@ -311,8 +313,9 @@ public class StudController {
             studentForm.setStudBorn(student.getBorn());
             studentForm.setStudPhone(student.getPhone());
             studentForm.setLivingCondition(student.getLivingCondition().getRus());
-            studentForm.setFamilyStatus(student.getFamilyStatus().getRus());
-            studentForm.setPost(student.getPost().getRus());
+            studentForm.setFamilyStatus(student.getFamilyStatus() != null ? student.getFamilyStatus().getRus() : "");
+            studentForm.setPost(student.getPost() != null ? student.getPost().getRus() : null);
+            studentForm.setAddress(student.getAddress());
         } else {
             student.setId(studentForm.getId());
             student.setFamily(studentForm.getStudFamily());
@@ -321,8 +324,9 @@ public class StudController {
             student.setBorn(studentForm.getStudBorn());
             student.setPhone(studentForm.getStudPhone());
             student.setLivingCondition(LivingConditions.getByRus(studentForm.getLivingCondition()));
-            student.setFamilyStatus(FamilyStatuses.getByRus(studentForm.getFamilyStatus()));
-            student.setPost(Posts.getByRus(studentForm.getPost()));
+            student.setFamilyStatus(studentForm.getFamilyStatus().isEmpty() ? null : FamilyStatuses.getByRus(studentForm.getFamilyStatus()));
+            student.setPost(studentForm.getPost().isEmpty() ? null : Posts.getByRus(studentForm.getPost()));
+            student.setAddress(studentForm.getAddress());
         }
     }
 
@@ -373,5 +377,6 @@ public class StudController {
         model.addObject("parentTypes", ParentType.getRusList());
         model.addObject("posts", Posts.getRusList());
         model.addObject("orderTypes", OrderType.getRusList());
+        MainController.getUserName(model);
     }
 }

@@ -5,20 +5,24 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/cards.css" />
+    <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/main.css" />
+    <title>Успеваемость</title>
 </head>
 <body>
-    <p>Табель за ${reportCardForm.month} ${reportCardForm.year} года</p>
+<div class="wrap">
+    <jsp:include page="header.jsp" />
+    <p class="title-text">Табель за ${reportCardForm.month} ${reportCardForm.year} года</p>
 
     <spring:url value="/cards/savereportcard" var="saveCardUrl" />
 
     <form:form modelAttribute="reportCardForm" method="post" action="${saveCardUrl}" name="reportCardForm">
-        <table>
+        <table class="rep_card">
             <thead>
                 <tr>
-                    <th>Студента/дисциплина</th>
+                    <th>Студент/дисциплина</th>
                     <c:forEach items="${disciplines}" var="discipline">
-                        <th>${discipline.disciplineName}</th>
+                        <th class="vertical_text"><p class="vertical_text">${discipline.disciplineName}</p></th>
                     </c:forEach>
                 </tr>
             </thead>
@@ -42,9 +46,12 @@
                 </c:forEach>
             </tbody>
         </table>
-        <button type="submit">Сохранить</button>
+        <button id="save_report_card" type="submit" class="btn">Сохранить</button>
+        <a id="generate_report_card" class="btn" href="/reports/reportcard?month=${reportCardForm.month.ordinal()}&year=${reportCardForm.year}">Генерация отчета</a>
         <form:hidden path="month" />
         <form:hidden path="year" />
     </form:form>
+</div>
+<jsp:include page="footer.jsp" />
 </body>
 </html>

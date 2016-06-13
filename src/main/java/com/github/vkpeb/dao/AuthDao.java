@@ -17,4 +17,13 @@ public interface AuthDao extends JpaRepository<Auth, Long>{
 
     @Query("select a from Auth a where a.enabled = 1")
     List<Auth> getAllActiveAuth();
+
+    @Query("select s.family || ' ' || s.name from Student s where s.auth=:auth")
+    String getStudNameByAuth(@Param("auth") Auth auth);
+
+    @Query("select p.family || ' ' || p.name from Parent p where p.auth=:auth")
+    String getParentNameByAuth(@Param("auth") Auth auth);
+
+    @Query("select s.family || ' ' || s.name from Boss s where s.auth=:auth")
+    String getBossNameByAuth(@Param("auth") Auth auth);
 }

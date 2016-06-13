@@ -2,6 +2,7 @@ package com.github.vkpeb.service.impl;
 
 import com.github.vkpeb.dao.AuthDao;
 import com.github.vkpeb.model.Auth;
+import com.github.vkpeb.model.enumer.UserType;
 import com.github.vkpeb.service.AuthService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,5 +70,18 @@ public class AuthServiceImpl implements AuthService {
     @Transactional
     public List<Auth> getAllActive() {
         return authDao.getAllActiveAuth();
+    }
+
+    @Override
+    public String getUserName(Auth auth) {
+        if (auth.getType().equals(UserType.ADMIN)) {
+            return auth.getLogin();
+        } else if (auth.getType().equals(UserType.BOSS)) {
+            return authDao.getBossNameByAuth(auth);
+        } else if (auth.getType().equals(UserType.PARENT)) {
+            return authDao.getParentNameByAuth(auth);
+        } else {
+            return authDao.getStudNameByAuth(auth);
+        }
     }
 }
